@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react'
 // For GitHub Pages without a custom domain, change to: base: '/REPO_NAME/'
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: '/ncindoorcricket.com_website/',
   build: {
     outDir: 'dist',
     assetsInlineLimit: 0,
