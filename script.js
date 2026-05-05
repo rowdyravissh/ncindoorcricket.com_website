@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.hero-slide');
   const dots = document.querySelectorAll('.dot');
   const heroData = [
-    { title: '<span>The Future of Cricket</span><span class="gradient-text glow">in North Carolina</span>', sub: "Greater Charlotte's first purpose-built indoor cricket arena — engineered for the sport, not adapted from a warehouse." },
     { title: '<span>Box Cricket.</span><span class="gradient-text glow">Unleashed.</span>', sub: 'Full-contact, high-intensity 6v6 and 8v8 matches under stadium lights. Year-round leagues start at launch.' },
+    { title: '<span>The Future of Cricket</span><span class="gradient-text glow">in North Carolina</span>', sub: "Greater Charlotte's first purpose-built indoor cricket arena — engineered for the sport, not adapted from a warehouse." },
     { title: '<span>Train Like</span><span class="gradient-text glow">a Pro.</span>', sub: 'Full 85ft run-up lanes with 2024 BOLA pitching machines. Professional-grade turf engineered for consistent bounce.' }
   ];
   let current = 0;
