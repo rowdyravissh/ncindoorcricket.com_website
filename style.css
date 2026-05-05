@@ -42,6 +42,7 @@ ul{list-style:none}
 .btn-secondary:hover{border-color:#fff;background:rgba(255,255,255,.1)}
 .btn-lg{font-size:1.125rem;padding:1rem 2rem}
 .btn-full{width:100%;font-size:1.125rem;padding:1.1rem 2rem}
+.btn-sm{padding:.6rem 1.25rem;font-size:.85rem}
 .btn-icon{width:20px;height:20px;margin-left:.5rem}
 .bounce{animation:bounceSlow 3s ease-in-out infinite}
 

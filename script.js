@@ -29,9 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.hero-slide');
   const dots = document.querySelectorAll('.dot');
   const heroData = [
-    { title: '<span>Box Cricket.</span><span class="gradient-text glow">Unleashed.</span>', sub: 'Full-contact, high-intensity 6v6 and 8v8 matches under stadium lights. Year-round leagues start at launch.' },
-    { title: '<span>The Future of Cricket</span><span class="gradient-text glow">in North Carolina</span>', sub: "Greater Charlotte's first purpose-built indoor cricket arena — engineered for the sport, not adapted from a warehouse." },
-    { title: '<span>Train Like</span><span class="gradient-text glow">a Pro.</span>', sub: 'Full 85ft run-up lanes with 2024 BOLA pitching machines. Professional-grade turf engineered for consistent bounce.' }
+    { title: '<span>Box Cricket.</span><span class="gradient-text glow">Unleashed.</span>' },
+    { title: '<span>The Future of Cricket</span><span class="gradient-text glow">in North Carolina</span>' },
+    { title: '<span>Train Like</span><span class="gradient-text glow">a Pro.</span>' }
   ];
   let current = 0;
   let timer;
@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     slides[current].classList.add('active');
     dots[current].classList.add('active');
     document.getElementById('hero-title').innerHTML = heroData[i].title;
-    document.getElementById('hero-subtitle').textContent = heroData[i].sub;
     resetTimer();
   }
   function next() { goTo((current + 1) % slides.length); }
