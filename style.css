@@ -145,7 +145,7 @@ ul{list-style:none}
 
 /* ═══ Form ═══ */
 .form-card{background:linear-gradient(135deg,#0f1629,#141d38);border-radius:1rem;padding:2rem;position:relative}
-.form-card::before{content:'';position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(57,255,20,.3),transparent,rgba(57,255,20,.3));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.form-card::before{content:'';position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(57,255,20,.3),transparent,rgba(57,255,20,.3));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
 .form-grid{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-bottom:1.5rem}
 .form-group{display:flex;flex-direction:column}
 .full-width{grid-column:1/-1}
