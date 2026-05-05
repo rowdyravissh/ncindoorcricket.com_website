@@ -1,39 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary Meta Tags -->
-    <title>NC Indoor Cricket | Premier Box Cricket & Training Arena — Greater Charlotte, NC</title>
-    <meta name="description" content="North Carolina's premier indoor cricket facility in the Greater Charlotte area. Year-round Box Cricket leagues, professional training lanes with BOLA machines, youth academies, and corporate events. Grand Opening Soon!" />
-    
-    <!-- SEO Keywords -->
-    <meta name="keywords" content="Box Cricket Charlotte, Indoor cricket nets NC, Cricket training machines Greater Charlotte, Year-round cricket NC area, indoor cricket North Carolina, box cricket leagues, cricket academy Charlotte" />
-    
-    <!-- Open Graph / Social -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="NC Indoor Cricket | Premier Box Cricket & Training Arena" />
-    <meta property="og:description" content="The Greater Charlotte area's first elite indoor cricket stadium. Year-round leagues, pro training lanes, and youth academies. Register your interest!" />
-    <meta property="og:image" content="/hero-stadium.png" />
-    <meta property="og:url" content="https://ncindoorcricket.com" />
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="NC Indoor Cricket | Grand Opening Soon" />
-    <meta name="twitter:description" content="Premier indoor cricket in the Greater Charlotte, NC area. Box Cricket, training lanes, and more." />
-    
-    <!-- Canonical -->
-    <link rel="canonical" href="https://ncindoorcricket.com" />
-    
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>NC Indoor Cricket | Premier Box Cricket & Training Arena — Greater Charlotte, NC</title>
+  <meta name="description" content="North Carolina's premier indoor cricket facility in the Greater Charlotte area. Year-round Box Cricket leagues, professional training lanes with BOLA machines, youth academies, and corporate events. Grand Opening Soon!" />
+  <meta name="keywords" content="Box Cricket Charlotte, Indoor cricket nets NC, Cricket training machines Greater Charlotte, Year-round cricket NC area, indoor cricket North Carolina, box cricket leagues, cricket academy Charlotte" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NC Indoor Cricket | Premier Box Cricket & Training Arena" />
+  <meta property="og:description" content="The Greater Charlotte area's first elite indoor cricket stadium. Year-round leagues, pro training lanes, and youth academies. Register your interest!" />
+  <meta property="og:image" content="images/hero-stadium.png" />
+  <meta property="og:url" content="https://ncindoorcricket.com" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NC Indoor Cricket | Grand Opening Soon" />
+  <meta name="twitter:description" content="Premier indoor cricket in the Greater Charlotte, NC area. Box Cricket, training lanes, and more." />
+
+  <link rel="canonical" href="https://ncindoorcricket.com" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js" defer></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <header id="navbar">
+    <!-- Grand Opening Banner -->
+    <div class="banner">
+      <div class="banner-inner">
+        <i data-lucide="zap" class="banner-icon"></i>
+        <p>Grand Opening Soon — Greater Charlotte, NC Area</p>
+        <i data-lucide="zap" class="banner-icon"></i>
+      </div>
+    </div>
+
+    <nav class="nav-container">
+      <div class="nav-inner">
+        <!-- Logo -->
+        <a href="#" class="nav-logo" id="nav-logo">
+          <div class="logo-box"><span>NC</span></div>
+          <div class="logo-text">
+            <span class="logo-title">NC Indoor Cricket</span>
+            <span class="logo-sub">Greater Charlotte</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="nav-links" id="nav-links">
+          <a href="#facilities">Facilities</a>
+          <a href="#services">Services</a>
+          <a href="#interest" class="btn-primary nav-cta">Register Interest</a>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+          <i data-lucide="menu" id="menu-icon"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#facilities" onclick="closeMobile()">Facilities</a>
+      <a href="#services" onclick="closeMobile()">Services</a>
+      <a href="#interest" class="btn-primary" onclick="closeMobile()">Register Interest</a>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section id="hero" class="hero">
+    <!-- Slides -->
+    <div class="hero-slides">
+      <div class="hero-slide active" data-slide="0">
+        <img src="images/hero-stadium.png" alt="NC Indoor Cricket facility with professional turf and LED lighting" loading="eager" />
+      </div>
+      <div class="hero-slide" data-slide="1">
+        <img src="images/hero-match.png" alt="Intense box cricket match under arena lights" loading="lazy" />
+      </div>
+      <div class="hero-slide" data-slide="2">
+        <img src="images/hero-training.png" alt="Professional cricket training lane with BOLA pitching machine" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- Overlay gradients -->
+    <div class="hero-overlay-v"></div>
+    <div class="hero-overlay-h"></div>
+
+    <!-- Content -->
+    <div class="hero-content">
+      <div class="hero-inner">
+        <span class="badge animate-in">
+          <i data-lucide="map-pin" class="badge-icon"></i>
+          Greater Charlotte, NC Area
+        </span>
+
+        <h1 class="hero-title animate-in delay-1" id="hero-title">
+          <span>The Future of Cricket</span>
+          <span class="gradient-text glow">in North Carolina</span>
+        </h1>
+
+        <p class="hero-subtitle animate-in delay-2" id="hero-subtitle">
+          Greater Charlotte's first purpose-built indoor cricket arena — engineered for the sport, not adapted from a warehouse.
+        </p>
+
+        <div class="hero-ctas animate-in delay-3">
+          <a href="#interest" class="btn-primary btn-lg">
+            Register Your Interest
+            <i data-lucide="arrow-down" class="btn-icon bounce"></i>
+          </a>
+          <a href="#facilities" class="btn-secondary btn-lg">Explore the Arena</a>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <div class="hero-controls">
+        <div class="hero-dots">
+          <button class="dot active" data-dot="0" aria-label="Slide 1"></button>
+          <button class="dot" data-dot="1" aria-label="Slide 2"></button>
+          <button class="dot" data-dot="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="hero-arrows">
+          <button class="arrow-btn" id="hero-prev" aria-label="Previous slide">
+            <i data-lucide="chevron-left"></i>
+          </button>
+          <button class="arrow-btn" id="hero-next" aria-label="Next slide">
+            <i data-lucide="chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-fade-bottom"></div>
+  </section>
+
+  <!-- ═══════════════════════════════ FACILITIES ═══════════════════════════════ -->
+  <section id="facilities" class="section">
+    <div class="section-glow glow-center"></div>
+    <div class="container reveal-section">
+      <!-- Header -->
+      <div class="section-header">
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Engineered for Excellence
+        </div>
+        <h2>Professional Grade. <span class="gradient-text">Purpose Built.</span></h2>
+        <p>Every surface, every dimension, every system — purpose-built for cricket. No compromises, no multi-sport afterthoughts.</p>
+      </div>
+      <div class="glow-line"></div>
+
+      <!-- Specs Grid -->
+      <div class="grid-2">
+        <div class="glass-card reveal-item">
+          <div class="spec-icon green"><i data-lucide="ruler"></i></div>
+          <div class="spec-body">
+            <div class="spec-stat"><span class="gradient-text stat-num">24ft+</span><span class="stat-label">Clear Span Ceilings</span></div>
+            <p>Towering clear-span architecture designed for natural lofted shots and overhead plays — delivering an authentic, unrestricted stadium experience indoors.</p>
+          </div>
+        </div>
+
+        <div class="glass-card reveal-item">
+          <div class="spec-icon emerald"><i data-lucide="trees"></i></div>
+          <div class="spec-body">
+            <div class="spec-stat"><span class="gradient-text stat-num">15mm</span><span class="stat-label">Pro-Grade Turf System</span></div>
+            <p>High-density, non-sand-filled turf with Polyurethane (PU) backing engineered for consistent bounce performance with both hard tennis and leather cricket balls.</p>
+          </div>
+        </div>
+
+        <div class="glass-card reveal-item">
+          <div class="spec-icon blue"><i data-lucide="target"></i></div>
+          <div class="spec-body">
+            <div class="spec-stat"><span class="gradient-text stat-num">85ft</span><span class="stat-label">Full Run-Up Training Lanes</span></div>
+            <p>Professional-length batting lanes equipped with latest-generation BOLA and Jugs pitching machines — replicating every delivery from pace to spin at match-grade accuracy.</p>
+          </div>
+        </div>
+
+        <div class="glass-card reveal-item">
+          <div class="spec-icon amber"><i data-lucide="shield"></i></div>
+          <div class="spec-body">
+            <div class="spec-stat"><span class="gradient-text stat-num">6v6</span><span class="stat-label">Box Cricket Arena</span></div>
+            <p>Fully enclosed netting systems purpose-built for competitive Box Cricket — supporting 6v6 and 8v8 match formats in a tournament-ready environment. This is the real deal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ SERVICES ═══════════════════════════════ -->
+  <section id="services" class="section">
+    <div class="section-bg-gradient"></div>
+    <div class="section-glow glow-left"></div>
+    <div class="container reveal-section">
+      <!-- Header -->
+      <div class="section-header">
+        <div class="pill">
+          <span class="pill-dot"></span>
+          What We Offer
+        </div>
+        <h2>Your Game. <span class="gradient-text">Our Arena.</span></h2>
+        <p>Whether you're a seasoned pro, a weekend warrior, or just picking up a bat for the first time — we've got a pitch with your name on it.</p>
+      </div>
+      <div class="glow-line"></div>
+
+      <!-- Services Grid -->
+      <div class="grid-2">
+        <!-- Leagues -->
+        <div class="glass-card service-card reveal-item">
+          <div class="service-glow green-glow"></div>
+          <div class="service-top">
+            <div class="service-icon-wrap gradient-green"><div class="service-icon-inner"><i data-lucide="trophy"></i></div></div>
+            <div>
+              <h3>Competitive Leagues</h3>
+              <span class="service-tagline green-tag">Year-Round. All Levels.</span>
+            </div>
+          </div>
+          <p>Seasonal T20 and HardTennis series running all year long — rain or shine. From casual social leagues to elite divisions, find your competition level and bring your squad.</p>
+          <div class="pill-row">
+            <span class="feature-pill">T20 Series</span>
+            <span class="feature-pill">HardTennis Leagues</span>
+            <span class="feature-pill">All Skill Levels</span>
+            <span class="feature-pill">Seasonal Formats</span>
+          </div>
+        </div>
+
+        <!-- Training -->
+        <div class="glass-card service-card reveal-item">
+          <div class="service-glow blue-glow"></div>
+          <div class="service-top">
+            <div class="service-icon-wrap gradient-blue"><div class="service-icon-inner"><i data-lucide="crosshair"></i></div></div>
+            <div>
+              <h3>Training Lanes</h3>
+              <span class="service-tagline blue-tag">Pro-Level Practice.</span>
+            </div>
+          </div>
+          <p>Book full 85ft lanes for individual or team sessions. Every lane equipped with latest-generation BOLA and Jugs pitching machines delivering pace, spin, and swing at match intensity.</p>
+          <div class="pill-row">
+            <span class="feature-pill">Individual Sessions</span>
+            <span class="feature-pill">Team Bookings</span>
+            <span class="feature-pill">BOLA Machines</span>
+            <span class="feature-pill">Full 85ft Run-Up</span>
+          </div>
+        </div>
+
+        <!-- Academies -->
+        <div class="glass-card service-card reveal-item">
+          <div class="service-glow amber-glow"></div>
+          <div class="service-top">
+            <div class="service-icon-wrap gradient-amber"><div class="service-icon-inner"><i data-lucide="graduation-cap"></i></div></div>
+            <div>
+              <h3>Cricket Academies</h3>
+              <span class="service-tagline amber-tag">Develop. Compete. Excel.</span>
+            </div>
+          </div>
+          <p>Grassroots programs for beginners (ages 7–12) build fundamentals and a love for the game. High-Performance coaching for elite athletes leverages AI-enabled video analysis to sharpen technique.</p>
+          <div class="pill-row">
+            <span class="feature-pill">Grassroots (Ages 7–12)</span>
+            <span class="feature-pill">High-Performance</span>
+            <span class="feature-pill">AI Video Analysis</span>
+            <span class="feature-pill">Expert Coaching</span>
+          </div>
+        </div>
+
+        <!-- Corporate -->
+        <div class="glass-card service-card reveal-item">
+          <div class="service-glow purple-glow"></div>
+          <div class="service-top">
+            <div class="service-icon-wrap gradient-purple"><div class="service-icon-inner"><i data-lucide="building-2"></i></div></div>
+            <div>
+              <h3>Corporate Events</h3>
+              <span class="service-tagline purple-tag">Team Building. Reimagined.</span>
+            </div>
+          </div>
+          <p>Swap the tired bowling alley for something unforgettable. Organize corporate cricket matches, social events, and team-building experiences that actually build teams.</p>
+          <div class="pill-row">
+            <span class="feature-pill">Team Building</span>
+            <span class="feature-pill">Social Matches</span>
+            <span class="feature-pill">Private Events</span>
+            <span class="feature-pill">Custom Packages</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ INTEREST FORM ═══════════════════════════════ -->
+  <section id="interest" class="section">
+    <div class="section-glow glow-center-lg"></div>
+    <div class="container-sm reveal-section">
+      <!-- Header -->
+      <div class="section-header">
+        <div class="pill">
+          <i data-lucide="star" class="pill-icon"></i>
+          Exclusive Early Access
+        </div>
+        <h2>Secure Your Spot on <span class="gradient-text">the Interest List</span></h2>
+        <p>Be the first to know about our official opening date, early-bird specials, and exclusive launch events in the Greater Charlotte area.</p>
+      </div>
+
+      <!-- Form Card -->
+      <div class="form-card">
+        <!-- Success State (hidden by default) -->
+        <div class="form-success" id="form-success" style="display:none;">
+          <div class="success-icon"><i data-lucide="check-circle"></i></div>
+          <h3>You're on the list!</h3>
+          <p>We will reach out soon with exclusive updates for our official opening date in the Greater Charlotte area. Get ready to play.</p>
+        </div>
+
+        <!-- Form -->
+        <form id="interest-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <!-- Error banner -->
+          <div class="form-error" id="form-error" style="display:none;">
+            <i data-lucide="alert-circle" class="error-icon"></i>
+            <span id="error-message"></span>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label for="name">Full Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="interest-select">Primary Interest <span class="required">*</span></label>
+            <select id="interest-select" name="interest" required>
+              <option value="">Select your primary interest</option>
+              <option value="leagues">Competitive Leagues</option>
+              <option value="lane-rentals">Training Lane Rentals</option>
+              <option value="youth-academy">Youth Academy (Ages 7–12)</option>
+              <option value="corporate-events">Corporate Events</option>
+            </select>
+          </div>
+
+          <input type="hidden" name="_subject" value="NC Indoor Cricket — New Interest Registration" />
+
+          <button type="submit" class="btn-primary btn-full" id="submit-btn">
+            <span id="btn-text">Join the Inner Circle</span>
+            <i data-lucide="send" class="btn-icon"></i>
+            <span id="btn-loading" style="display:none;">
+              <i data-lucide="loader-2" class="spin"></i> Submitting...
+            </span>
+          </button>
+
+          <p class="form-disclaimer">Your information is kept strictly confidential. We will only use it to send you launch updates.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer id="footer">
+    <div class="glow-line"></div>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-box"><span>NC</span></div>
+            <div class="logo-text">
+              <span class="logo-title">NC Indoor Cricket</span>
+              <span class="logo-sub">Greater Charlotte</span>
+            </div>
+          </div>
+          <p>The Greater Charlotte area's premier indoor cricket destination. Purpose-built for the sport you love.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#interest">Register Interest</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Get in Touch</h4>
+          <ul>
+            <li>
+              <a href="mailto:info@ncindoorcricket.com" id="footer-email">
+                <i data-lucide="mail" class="footer-icon"></i> info@ncindoorcricket.com
+              </a>
+            </li>
+            <li>
+              <span class="footer-location">
+                <i data-lucide="map-pin" class="footer-icon"></i> Greater Charlotte, NC Area
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 NC Indoor Cricket. All rights reserved.</p>
+        <div class="footer-seo">
+          <span>Box Cricket Charlotte</span>
+          <span class="seo-dot">·</span>
+          <span>Indoor Cricket Nets NC</span>
+          <span class="seo-dot">·</span>
+          <span>Year-Round Cricket NC Area</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
