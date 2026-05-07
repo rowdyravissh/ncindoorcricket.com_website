@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Validate
     if (!name) return showError('Please enter your full name.');
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showError('Please enter a valid email address.');
-    if (!phone || phone.replace(/\D/g, '').length < 10) return showError('Please enter a valid phone number.');
+    if (phone && phone.replace(/\D/g, '').length < 10) return showError('Please enter a valid phone number.');
     if (!interest) return showError('Please select your primary interest.');
 
     // Submit
