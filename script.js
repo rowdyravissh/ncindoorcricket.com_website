@@ -84,6 +84,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealItems.forEach(item => itemObserver.observe(item));
 
+  /* ── Analytics: CTA Click Tracking ── */
+  document.querySelectorAll('a[href="#interest"]').forEach(cta => {
+    cta.addEventListener('click', () => {
+      gtag('event', 'cta_click', {
+        event_category: 'engagement',
+        event_label: cta.textContent.trim(),
+        link_location: cta.closest('nav') ? 'navbar' :
+                       cta.closest('.hero') ? 'hero' :
+                       cta.closest('footer') ? 'footer' : 'page'
+      });
+    });
+  });
+
   /* ── Form Handling ── */
   const form = document.getElementById('interest-form');
   const formSuccess = document.getElementById('form-success');
@@ -92,6 +105,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnText = document.getElementById('btn-text');
   const btnLoading = document.getElementById('btn-loading');
   const btnIcon = form.querySelector('.btn-icon');
+
+  /* ── Analytics: Form Start (fires once on first interaction) ── */
+  let formStarted = false;
+  form.querySelectorAll('input, select').forEach(field => {
+    field.addEventListener('focus', () => {
+      if (!formStarted) {
+        formStarted = true;
+        gtag('event', 'form_start', {
+          event_category: 'form',
+          event_label: 'interest_form'
+        });
+      }
+    }, { once: true });
+  });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -120,6 +147,11 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify({ name, email, phone, interest, _subject: 'NC Indoor Cricket — ' + name })
       });
       if (res.ok) {
+        gtag('event', 'form_submit', {
+          event_category: 'form',
+          event_label: 'interest_form',
+          interest_type: interest
+        });
         form.style.display = 'none';
         formSuccess.style.display = 'block';
         lucide.createIcons();
@@ -135,6 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function showError(msg) {
+    gtag('event', 'form_error', {
+      event_category: 'form',
+      event_label: msg
+    });
     errorMsg.textContent = msg;
     formError.style.display = 'flex';
     lucide.createIcons();
